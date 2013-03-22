@@ -1,0 +1,153 @@
+James Coll 2012 Programming Portfolio Release Notes
+
+Code Notes:
+Compiled on Windows 8 Platform.
+Compiled using MinGw (gcc version 4.6.2)
+Code was written on Notepad++.
+
+Compilation Notes:
+All code (except snakes.c - see note at end) was compiled using the command gcc -o EXECUTABLENAME.EXE SOURCEFILENAME.C
+
+Program Notes:
+1. helloworld.c
+A simple program using stdio.h to output 'Hello, World' to stdout.
+
+2. helloworldnewline.c
+A simple program using stdio.h to output 'Hello, World' with a newline to stdout.
+
+3. addition.c
+A simple program which demonstrates using the addition operator with integers in C
+
+4. sizeof.c
+A program which outputs the size of different variable types and arrays of those types for this platform in C.
+
+5. color.c
+A program which uses scanf to enter user input ('favourite color') into a character array and then outputs that array to stdout.
+
+6. colorext.c
+A program which extends color.c (above) but then outputs the first element of the character array using printf.
+
+7 deliberror.c
+A program which uses the functionality of color.c with a smaller array which is deliberately overpopulated to see what error messages are thrown. A sufficiently long array will throw an unhandled exception.
+
+8. addsubt.c
+A program which uses stdio functions in order to perform basic arithmetic functions (addition/subtraction) and then output them to stdout.
+
+9. addsubtractarray.c
+A program which uses stdio functions in order to perform basic arithmetic functions (addition/subtraction), stores them in an array and then outputs them to stdout.
+
+10. fndlarg.c
+A program which allows the user to enter three integers and returns the largest of those three. It does this by comparing the first two, storing the largest and then comparing that value with the third - storing the largest of those. It ends by returning the stored value.
+
+11. newline.c
+A program which asks the user to enter a character string and then a character. It warns the user when a newline has been entered and then exits after printing the stored string and character. Because this program was modified from provided code the warning condition will not arise. The modification involved adding the do while loop surrounding getchar().
+
+12. calculator.c
+This program provides simple calculator functionality by storing a user specified character in memory and then performing that operation(addition, subtraction, multiplication and division) on two user-specified integer variables. Error checking is done for division by zero and for a nonsense value as an operator. Division will result in an integer value being returned regardless of input numbers.
+
+13. calculatorextra.c
+This program extends the above program which provides simple calculator functionality by storing a user specified character in memory and then performing that operation(addition, subtraction, multiplication and division) on two user-specified integer variables. It works as the above program but loops until a 'q' is provided on user input. This allows for multiple inputs of values.
+
+14. unsigned.c
+This program demonstrates the behaviour of the unsigned integer type and shows what value is output when a negative value is what might be expected by the user. Instead the value of an integer is cyclical between the maximum possible positive value of an int on that platform and zero.
+
+ 15. charasbyte.c
+ This program examines the behaviour of addressing a character variable as a byte in a C program. It uses a loop to iterate through the values of that character outputting them as integer values.
+ 
+ 16. wordcountwhile.c
+ This program uses a while loop to count the number of characters in a string. It does this by iterating through the values held in an array until the null-terminator is found. It then removes one from the counter used so that the null-terminator isn't included in the value given as the string length.
+ 
+ 17. wordcountfor.c
+ This program does the same thing as above except that it takes into account that the for loop post-increments the variable which saves the programmer the bother of having to deduct one from the length as the counter will not increment after the null-terminator is hit.
+ 
+ 18. guessword.c
+ This program stores a word in memory and then asks the user to guess what the word is. It will run until the user enters the correct word. It works out what the correct word is by using the strcmp function.
+ 
+ 19. guessworfor.c
+ This program has the same functionality as above but gives the user only three guesses at the word. It does this using a for loop that iterates three times and a check variable which stores whether the user succeeded or not. This variable allows for a message when program exit is reached.
+ 
+ 20. fgets.c scanf.c
+ These two programs were written to compare the differences between using fgets and scanf to store user input from stdin. The functions take different numbers of parameters and have different practical uses. In this case both programs are designed to have the same interface behaviour but have to be written in different ways because of the different functions.
+ 
+ 21. reverseword.c
+ This program asks the user to input any number of words (up to a specified length of 200 characters) and then prints the reverse of each word out to stdout. It does this by i) removing the null-terminator from the end of the array ii) looping through the array until a whitespace is found iii) using an inner loop to go backwards from each whitespace which flips the words in place and outputs them to stdout.
+ 
+ 22. replacevowels.c
+ This program asks the user to input a string and then iterates through that string character by character replacing (lowercase) vowels with the $ symbol.
+
+23. guesswordfunction.c
+This program extends the functionality of programs 18/19 but pushes the segment of code which asks for user input into a function. 
+
+24. reversewordfunction.c
+This program has the same behaviour as program 21 but it written in a different way. It uses a loop in main to work out what each word in the input string is and then it uses pointers in the swap function to reverse the word in place so that the reverse string replaces the input string in memory.
+
+25. countletters.c
+This program counts the number of letters in a given string by using a series of if statements to check which lower/upper case letters are within a string and increment counters (stored as an array). It then outputs a count of each letter using an array as a lookup table for the letters.
+
+26. mainarguments.c
+This program demonstrates how arguments work with the main function. It essentially shows that two important pieces of information are stored when a program is invoked. The number of arguments and the arguments themselves.
+
+27. malloc.c
+This program shows how the malloc function works and demonstrates how the values are held in memory and how memory locations have addresses associate with them.
+
+ 28. array.c
+ A program which allocates a small amount of memory using a character array and then prints the location (and contents) out. It shows out different arguments to the printf function can print out either the value held at an address or held within an address.
+ 
+ 29. calculatorcommand.c
+ This program implements the functionality of the calculator programs at 12/13 but takes parameters from the command line rather than by running the program itself. 
+ 
+ 30. ptrword.c 
+ A program which allocates a small amount of memory using malloc, puts a string into that location and then uses a pointer to modify what is in that location. It essentially demonstrates pointer operations and how to use free after using malloc to assign memory.
+ 
+ 31. guesswordfl.c
+ This program reads in a guessword from an input file and then essentially has the same functionality as program 19. 
+ 
+ 32. filecopy.c
+ This program runs as a command line program which creates a copy of a specified text file with the filename given as a second command name argument. 
+ 
+ 33. guesswordfl.c
+ This program extends the functionality of program 31 by providing a list of guess words, allowing three guesses at each and then moving to the next word on either success or on three guesses having passed. A file guess.txt contains the list of words to be guessed.
+ 
+ 34. filecompare.c
+ This program compares the contents of two text files returning a message saying whether the files have the same textual contents or different textual contents. It does this by iterating through the values in the files character by character and comparing them. Three extra files have been provided for testing - compare1.txt and compare2.txt (which are identical) and differ1.txt (which is different).
+ 
+ 35. inputfile.c
+ This program reads in an inputfile twenty characters at a time and then waits for user input to continue displaying characters. It does this using a modulo comparison inside a loop which waits for user input. An extra file inputfile.txt has been provided to test functionality.
+ 
+ 36. symbolcount.c
+ This program iterates through a character string counting the different occurence of bracket symbols and outputting them to the user as a report before the program exits. A file has been provided for testing functionality - dummyfile.txt.
+ 
+ 37. struct.c
+ This program demonstrates the use of a struct for storing multiple data types. It additionally loads struct data (one entry, in this case) from a file and then writes that to that file on user input (struct.dat). 
+ 
+ 38. multistruct.c
+ This program extends the functionality of program 37 by using a linked-list to store data about the students (read in from the file list.dat on start-up). This allows for the general case in which the number of students to be input is unknown.
+ 
+ 39. studentdatabase.c
+ This program further extends the functionality of program 38 by storing more information within the struct and by adding much more data into the initial loading file - database.dat. It demonstrates how a database of students would be created in an efficient way in C code.
+ 
+ Various
+This folder includes four extra programs:
+
+algorithms.c
+This program demonstrates how to use a series of different algorithms in C and includes an implementation of Bubblesort, Quicksort and Selection Sort. It also provides more basic algorithms such as finding the square root by approximation and finding the greatest common divisor of any two numbers. The program uses defined boolean values and a SWAP macro which make for easier code readability.
+
+linkedlist.c
+This program was provided in the notes for this course and demonstrates how to implement a simple linked list in C. It provided a useful template for the solution of problems 38 and 39 in the portfolio.
+
+linkedlistextended.c
+This program provides similar functionality to the linkedlist.c program but also moves the linkedlist declaration closer to the model of a template as well as including push and pop functions for accessing list members. It is a very similar program but using different calls and a slightly more robust coding style.
+
+snakes.c
+This is a windows compiled version of the snakes game which allows for compilation using pdcurses. It was necessary to modify the original snakes.c program in three ways i) changing #include <ncurses.h> to #include <curses.h> ii) changing a call to srandom() to a call to srand() iii) changing a call to random() to a call to rand(). It was necessary to run the command line instruction "mingw-get install mingw32-libpdcurses" from the directory c:/MinGW/bin (assuming MinGW was installed in the default directory). Then to copy the two header files in the zip folder (snakes.zip) into c:/MinGW/include (assuming default directories) and then to copy the lib file into c:/MinGW/lib. The program can then be compiled using the command "gcc snakes.c -lpdcurses -o snakes.exe".
+
+ 
+ 
+ 
+
+
+
+
+
+
+

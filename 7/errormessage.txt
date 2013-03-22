@@ -1,0 +1,4 @@
+The error messages was an unhandled exception.
+
+If I place more than the allowed number of characters into the array then the function loops and allows me to enter values again instead
+of exiting with return 0.
