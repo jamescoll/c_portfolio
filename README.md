@@ -1,4 +1,4 @@
 c_portfolio
 ===========
 
-C Code from my MSc Course
+The C Portfolio from my MSc
